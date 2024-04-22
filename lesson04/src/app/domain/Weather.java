@@ -13,14 +13,15 @@ public class Weather {
         this.city = city;
         this.condition = condition;
         this.celsius = celsius;
+        this.fahrenheit = (1.8 * this.celsius) + 32;
     }
 
     public int getCelsius() {
         return celsius;
     }
 
-    public void setFahrenheit(double fahrenheit) {
-        this.fahrenheit = fahrenheit;
+    public String getCity() {
+        return city;
     }
 
     @Override

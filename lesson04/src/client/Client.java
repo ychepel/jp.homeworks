@@ -9,6 +9,8 @@ public class Client {
     public static void main(String[] args) {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext("app");
         WeatherController controller = context.getBean(WeatherController.class);
+        System.out.println(controller.getByCity("Berlin"));
         System.out.println(controller.getByCity("California"));
+        System.out.println(controller.getByCity("Berlin"));
     }
 }
