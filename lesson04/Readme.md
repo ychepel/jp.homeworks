@@ -1,0 +1,1 @@
+Придумать своё приложение, аналогичное тому, которое разрабатывали на занятии. Обязательно использовать аннотации @Component, @Repository, @Service, @Autowired, @Primary, @Qualifier, @Value.
