@@ -36,7 +36,7 @@ public class CarServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         Car newCar = mapper.readValue(req.getReader(), Car.class);
-        repository.save(newCar);
+        newCar = repository.save(newCar);
 
         String jsonResult = mapper.writeValueAsString(newCar);
         resp.setContentType("application/json");
