@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class CarServlet extends HttpServlet {
 
-    private final CarRepository repository = new CarRepositoryMap();
+    private final CarRepository repository = new CarRepositoryDB();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -36,7 +36,7 @@ public class CarServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         Car newCar = mapper.readValue(req.getReader(), Car.class);
-        repository.save(newCar);
+        newCar = repository.save(newCar);
 
         String jsonResult = mapper.writeValueAsString(newCar);
         resp.setContentType("application/json");
