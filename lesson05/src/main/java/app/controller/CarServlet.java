@@ -38,7 +38,10 @@ public class CarServlet extends HttpServlet {
         Car newCar = mapper.readValue(req.getReader(), Car.class);
         repository.save(newCar);
 
-        returnSuccess(resp);
+        String jsonResult = mapper.writeValueAsString(newCar);
+        resp.setContentType("application/json");
+        resp.setStatus(HttpServletResponse.SC_OK);
+        resp.getWriter().write(jsonResult);
     }
 
     @Override
