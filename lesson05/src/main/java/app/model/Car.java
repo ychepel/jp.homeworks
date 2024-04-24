@@ -13,6 +13,9 @@ public class Car {
     private BigDecimal price;
     private int year;
 
+    public Car() {
+    }
+
     @JsonCreator
     public Car(
             @JsonProperty("brand") String brand,
