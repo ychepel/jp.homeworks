@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class CarServlet extends HttpServlet {
 
-    private final CarRepository repository = new CarRepositoryMap();
+    private final CarRepository repository = new CarRepositoryDB();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
