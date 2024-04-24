@@ -48,7 +48,6 @@ public class CarRepositoryHibernate implements CarRepository {
         transaction.begin();
         Car dbCar = entityManager.find(Car.class, car.getId());
         dbCar.setPrice(car.getPrice());
-        entityManager.persist(dbCar);
         transaction.commit();
     }
 
